@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "StaticPages" do
+  let(:base_title) {"CRM"}
   describe "Home" do
     it "Should have content 'Home'" do
     	visit 'static_pages/home'
@@ -9,7 +10,7 @@ describe "StaticPages" do
 
     it "Should have the title 'CRM | Home'" do
     	visit 'static_pages/home'
-    	expect(page).to have_title('CRM | Home')
+    	expect(page).to have_title("#{base_title} | Home")
     end
   end
 
@@ -21,7 +22,7 @@ describe "StaticPages" do
 
   	it "SHould have the title 'CRM | Pomoc'" do
   		visit 'static_pages/help'
-  		expect(page).to have_title('CRM | Pomoc')
+  		expect(page).to have_title("#{base_title} | Pomoc")
   	end
   end
 end
