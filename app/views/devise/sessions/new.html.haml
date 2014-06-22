@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title
+      CRM | Logowanie
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body.signin
+    .container
+      = render 'layouts/messages'
+      = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+        =devise_error_messages!
+        %h2.form-signin-heading= t('.sign_in')
+        .form-inputs
+          = f.input :email, :required => false, :autofocus => true, label: false, input_html: { class: 'form-control' },
+                    placeholder: t('simple_form.labels.user.new.email')
+          = f.input :password, :required => false, label: false, input_html: { class: 'form-control' },
+                    placeholder: t('.password')
+          = f.input_field :remember_me, :as => :boolean, :inline_label => true if devise_mapping.rememberable?
+        .form-actions
+          = f.button :submit, t('.sign_in'), class: 'btn btn-lg btn-primary btn-block'
+        = render "devise/shared/links"

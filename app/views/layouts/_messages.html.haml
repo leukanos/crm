@@ -1,0 +1,6 @@
+.row
+  .col-md-8.col-md-offset-2
+    - flash.each do |type, message|
+      %div{class: "alert #{bootstrap_class_for(type)} alert-dismissable"}
+        %button.close{"data-dismiss" => "alert"} ×
+        = message

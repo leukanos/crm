@@ -5,6 +5,7 @@ gem 'rails', '4.1.0'
 
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
+gem 'figaro'
 
 # style and views
 gem 'sass-rails'
@@ -42,6 +43,7 @@ end
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem "email_spec"
   gem 'capybara'
   gem 'selenium-webdriver'
 end
@@ -49,4 +51,5 @@ end
 group :development, :test do
 	gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'puma'
 end
