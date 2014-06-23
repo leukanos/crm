@@ -23,3 +23,4 @@ pl:
   hello: "Hello world"
   name: "CRM"
   help: "pomoc"
+  logout: "wyloguj"
