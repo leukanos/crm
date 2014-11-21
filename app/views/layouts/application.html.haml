@@ -44,5 +44,11 @@
                     %a{href: "#"} Separated link
                   %li
                     %a{href: "#"} One more separated link
+              -if current_user.admin?
+                %li
+                  %a{href: rails_admin_path}
+                    = t('admin.actions.dashboard.title')
+              %li.pull-right
+                =link_to t('devise.sign_out'), destroy_user_session_path, :method => :delete
     = render 'layouts/messages'
     = yield

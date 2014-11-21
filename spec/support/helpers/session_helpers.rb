@@ -5,7 +5,7 @@ module Features
       fill_in 'user_email', with: email
       fill_in 'user_password', with: password
       fill_in 'user_password_confirmation', :with => confirmation
-      click_button 'commit'
+      click_button I18n.t('devise.registrations.new.sign_up')
     end
 
     def signin(email, password)

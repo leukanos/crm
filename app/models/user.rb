@@ -1,5 +1,11 @@
 class User
   include Mongoid::Document
+  include Mongoid::Timestamps
+
+  has_many :addresses, as: :addressable
+
+  has_many :accounts
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -30,6 +36,9 @@ class User
   field :confirmed_at,         :type => Time
   field :confirmation_sent_at, :type => Time
   field :unconfirmed_email,    :type => String # Only if using reconfirmable
+
+  ## Role (CanCan)
+  field :admin, :type => Boolean
 
   ## Lockable
   # field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts

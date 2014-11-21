@@ -11,6 +11,7 @@ feature 'Home page' do
   scenario 'visit the home page' do
     visit root_path
     expect(page).to have_content I18n.t('devise.sessions.new.sign_in')
+    expect(page).not_to have_css('div.navbar.navbar-inverse.navbar-fixed-top')
   end
 
 end
