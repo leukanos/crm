@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.8'
 
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
@@ -15,16 +15,16 @@ gem 'select2-rails'
 gem 'haml', '~> 4.0.5'
 
 #authentication
-gem 'devise', '3.2.2'
+gem 'devise'
+
+#authorization
+gem "cancan"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -34,6 +34,8 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
+
+gem 'rails_admin'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -52,4 +54,7 @@ group :development, :test do
 	gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'puma'
+  gem 'wirble'
+  gem 'hirb'
+  gem 'awesome_print'
 end

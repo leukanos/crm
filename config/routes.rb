@@ -1,4 +1,5 @@
 Crm::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'help' => 'static_pages#help'
 
   authenticated :user do
