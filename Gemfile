@@ -57,4 +57,5 @@ group :development, :test do
   gem 'wirble'
   gem 'hirb'
   gem 'awesome_print'
+  gem "spring"
 end

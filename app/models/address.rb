@@ -7,10 +7,10 @@ class Address
   validates :address_type, presence: true
 
 
-  field :address_type,    :type => String
-  field :street,          :type => String
-  field :city,            :type => String
-  field :zipcode,         :type => String
-  field :country,         :type => String
+  field :address_type,
+  field :street,
+  field :city,
+  field :zipcode,
+  field :country,
 
 end
