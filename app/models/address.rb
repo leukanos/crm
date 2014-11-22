@@ -4,7 +4,7 @@ class Address
 
   belongs_to :addressable, polymorphic: true
 
-  validates :name, presence: true
+  validates :address_type, presence: true
 
 
   field :address_type,    :type => String
