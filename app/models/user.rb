@@ -13,12 +13,12 @@ class User
          :confirmable
 
   ## Database authenticatable
-  field :username,
-  field :email,              type: String, :default => ''
-  field :encrypted_password, type: String, :default => ''
+  field :username
+  field :email,              :default => ''
+  field :encrypted_password, :default => ''
 
   ## Recoverable
-  field :reset_password_token,
+  field :reset_password_token
   field :reset_password_sent_at, type: Time
 
   ## Rememberable
@@ -28,14 +28,14 @@ class User
   field :sign_in_count,      type: Integer, :default => 0
   field :current_sign_in_at, type: Time
   field :last_sign_in_at,    type: Time
-  field :current_sign_in_ip,
-  field :last_sign_in_ip,
+  field :current_sign_in_ip
+  field :last_sign_in_ip
 
   ## Confirmable
-  field :confirmation_token,
+  field :confirmation_token
   field :confirmed_at,         type: Time
   field :confirmation_sent_at, type: Time
-  field :unconfirmed_email,
+  field :unconfirmed_email
 
   ## Role (CanCan)
   field :admin, type: Boolean

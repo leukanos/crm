@@ -3,6 +3,6 @@ class ContactAttribute
 
   embedded_in :contactable_attribute, polymorphic: true
 
-  field :attribute_type, type: String
-  field :value,          type: String
+  field :attribute_type
+  field :value
 end

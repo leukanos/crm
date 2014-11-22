@@ -7,9 +7,9 @@ class Account
 
   accepts_nested_attributes_for :contact_attributes
 
-  field :name,
-  field :acronym,
-  field :description,
+  field :name
+  field :acronym
+  field :description
 
   validates :name, uniqueness: true, presence: true
 end
