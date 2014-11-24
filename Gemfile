@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'select2-rails'
 gem 'haml', '~> 4.0.5'
+gem "font-awesome-rails"
 
 #authentication
 gem 'devise'

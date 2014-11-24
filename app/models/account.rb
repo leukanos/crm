@@ -1,6 +1,7 @@
 class Account
   include Mongoid::Document
 
+
   belongs_to :user
   has_many :addresses, as: :addressable
   embeds_many :contact_attributes, as: :contactable_attribute

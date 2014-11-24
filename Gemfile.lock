@@ -263,6 +263,7 @@ DEPENDENCIES
   enumerize
   factory_girl_rails
   figaro
+  font-awesome-rails
   haml (~> 4.0.5)
   hirb
   jbuilder

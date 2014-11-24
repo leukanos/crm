@@ -15,4 +15,11 @@ module ApplicationHelper
     end
   end
 
+  def link_to_with_icon(*args)
+    name = args.first
+    icon = args.second
+    url = args.third
+    html_options = args.fourth || {}
+    link_to(content_tag(:i, '', class: icon) + ' ' + name, url, html_options)
+  end
 end

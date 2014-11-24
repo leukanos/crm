@@ -1,0 +1,5 @@
+pl:
+  mongoid:
+    errors:
+      messages:
+        taken: Zajęte

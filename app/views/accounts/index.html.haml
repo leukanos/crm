@@ -1,24 +1,34 @@
-%table.table.table-striped
-  -i = 0
-  -@accounts.each do |account|
-    -i+=1
+.container
+  %table.table.table-striped.table-bordered
     %tr
-      %th
-        ='#'
-      %th
-        Nazwa
-      %th
-        =t('enumerize.contact_attribute.attribute_type.email')
-      %th
-        =t('enumerize.contact_attribute.attribute_type.phone')
-    %tr
-      %td
-        =i
-      %td
-        =account.name
-      %td
-        -account.contact_attributes.email.each do |email|
-          ="#{email.value}"
-      %td
-        -account.contact_attributes.phone.each do |phone|
-          ="#{phone.attribute_type.text}: #{phone.value}"
+    %th
+      ='#'
+    %th
+    %th
+      =Account.human_attribute_name(:name)
+    %th
+      =t('enumerize.contact_attribute.attribute_type.email')
+    %th
+      =t('enumerize.contact_attribute.attribute_type.phone')
+    %th
+      =t('enumerize.contact_attribute.attribute_type.other')
+    -i = 0
+    -@accounts.each do |account|
+      -i+=1
+      %tr
+        %td
+          =i
+        %td
+          = link_to_with_icon('', 'fa fa-list-alt icon-white', account_path(account), {:class => "btn btn-primary btn-small btn-pad", :"data-toggle" => "tooltip", :title => t(:'shared.show')})
+          = link_to_with_icon('', 'fa fa-edit icon-white', edit_account_path(account), {:class => "btn btn-primary btn-small btn-pad", :"data-toggle" => "tooltip", :title => t(:'shared.edit')})
+        %td
+          =account.name
+        %td
+          -account.contact_attributes.email.each do |email|
+            ="#{email.value}"
+        %td
+          -account.contact_attributes.phone.each do |phone|
+            ="#{phone.attribute_type.text}: #{phone.value}"
+        %td
+          -account.contact_attributes.other.each do |other|
+            ="#{other.value}"

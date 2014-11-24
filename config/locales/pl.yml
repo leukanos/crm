@@ -24,3 +24,6 @@ pl:
   name: "CRM"
   help: "pomoc"
   logout: "wyloguj"
+  shared:
+    show: pokaż
+    edit: edycja

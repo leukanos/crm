@@ -1,0 +1,8 @@
+pl:
+  mongoid:
+    attributes:
+      account:
+        name: nazwa
+        acronym: akronim
+        description: opis
+        contact_attributes: kontakt

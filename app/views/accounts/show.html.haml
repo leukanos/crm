@@ -1,0 +1,11 @@
+.container
+  %dl
+    %dt= Account.human_attribute_name(:name)
+    %dd= @account.name
+    %dt= Account.human_attribute_name(:acronym)
+    %dd= @account.acronym
+    %dt= Account.human_attribute_name(:description)
+    %dd= @account.description
+    %dt= Account.human_attribute_name(:contact_attributes)
+    -@account.contact_attributes.each do |contact|
+      %dd= "#{contact.attribute_type.text}: #{contact.value}"
