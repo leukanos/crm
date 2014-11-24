@@ -12,4 +12,6 @@ Crm::Application.routes.draw do
   end
 
   resources :users
+
+  resources :accounts
 end
