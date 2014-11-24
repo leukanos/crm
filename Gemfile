@@ -37,6 +37,8 @@ gem 'jbuilder'
 
 gem 'rails_admin'
 
+gem 'enumerize'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

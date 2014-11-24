@@ -1,0 +1,9 @@
+pl:
+  enumerize:
+    contact_attribute:
+      attribute_type:
+        landline: telefon stacjonarny
+        mobile: telefon komórkowy
+        other: inne
+        email: e-mail
+        phone: telefon
