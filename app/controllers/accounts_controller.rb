@@ -1,7 +1,7 @@
 class AccountsController < ApplicationController
 
   def index
-    @accounts = Account.all
+    @accounts = Account.paginate(:page => params[:page])
   end
 
   def show
@@ -38,7 +38,7 @@ class AccountsController < ApplicationController
   private
 
   def account_params
-    params.require(:account).permit(:name, :acronym, :description)
+    params.require(:account).permit(:name, :acronym, :description, contact_attributes_attributes: [:attribute_type, :value, :id, :_destroy, :_id] )
   end
 
 end

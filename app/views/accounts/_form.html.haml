@@ -2,4 +2,13 @@
   =f.input :name
   =f.input :acronym
   =f.input  :description
+  .items
+    =f.nested_fields_for :contact_attributes do |c|
+      %fieldset.item
+        =c.input :attribute_type
+        =c.input :value
+        =c.hidden_field :_destroy
+        =link_to(t('shared.delete'), '#', class: 'remove')
+  %p
+    =link_to(t('shared.add'), '#', class: 'add')
   =f.button :submit

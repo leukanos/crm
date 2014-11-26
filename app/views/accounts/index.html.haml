@@ -32,3 +32,4 @@
         %td
           -account.contact_attributes.other.each do |other|
             ="#{other.value}"
+  =will_paginate @accounts, renderer: BootstrapPagination::Rails

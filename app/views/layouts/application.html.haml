@@ -7,50 +7,80 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    / Fixed navbar
     -if user_signed_in?
-      .navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
-        .container
+      #wrapper
+        %nav.navbar.navbar-default.navbar-fixed-top{:role => "navigation", :style => "margin-bottom: 0"}
           .navbar-header
-            %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+            %button.navbar-toggle{"data-target" => ".sidebar-collapse", "data-toggle" => "collapse", :type => "button"}
               %span.sr-only Toggle navigation
               %span.icon-bar
               %span.icon-bar
               %span.icon-bar
-            %a.navbar-brand{href: root_path}
-              = t('name')
-          .navbar-collapse.collapse
-            %ul.nav.navbar-nav
-              %li.active
-              %li
-                %a{href: help_path}
-                  = t('help')
-              %li
-                %a{href: "#contact"} Contact
-              %li.dropdown
-                %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-                  Dropdown
-                  %b.caret
-                %ul.dropdown-menu
-                  %li
-                    %a{href: "#"} Action
-                  %li
-                    %a{href: "#"} Another action
-                  %li
-                    %a{href: "#"} Something else here
-                  %li.divider
-                  %li.dropdown-header Nav header
-                  %li
-                    %a{href: "#"} Separated link
-                  %li
-                    %a{href: "#"} One more separated link
-              %li
-                %a{href: accounts_path} Firmy
-              -if current_user.admin?
+            %a.navbar-brand{:href => root_path} CRM
+          -#/ /.navbar-header
+          %ul.nav.navbar-top-links.navbar-right
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                %i.fa.fa-envelope.fa-fw
+                %i.fa.fa-caret-down
+              %ul.dropdown-menu.dropdown-messages
+                =render partial: "home/dropdown_messages"
+            -#/ /.dropdown
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                %i.fa.fa-tasks.fa-fw
+                %i.fa.fa-caret-down
+              %ul.dropdown-menu.dropdown-tasks
+                =render partial: "home/dropdown_tasks"
+            -#/ /.dropdown
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                %i.fa.fa-bell.fa-fw
+                %i.fa.fa-caret-down
+              %ul.dropdown-menu.dropdown-alerts
+                =render partial: "home/dropdown_alerts"
+            -#/ /.dropdown
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                %i.fa.fa-user.fa-fw
+                %i.fa.fa-caret-down
+              %ul.dropdown-menu.dropdown-user
                 %li
-                  %a{href: rails_admin_path}
+                  %a{:href => "#"}
+                    %i.fa.fa-user.fa-fw
+                    User Profile
+                %li
+                  %a{:href => rails_admin_path}
+                    %i.fa.fa-gear.fa-fw
                     = t('admin.actions.dashboard.title')
-              %li.pull-right
-                =link_to t('devise.sign_out'), destroy_user_session_path, :method => :delete
-    = render 'layouts/messages'
-    = yield
+                %li.divider
+                %li
+                  = link_to(destroy_user_session_path, :method=>'delete') do
+                    %i.fa.fa-sign-out.fa-fw
+                    = t('devise.sign_out')
+          -#/ /.dropdown-user
+          -#/ /.dropdown
+          -#/ /.navbar-top-links
+          .navbar-default.navbar-static-side{:role => "navigation"}
+            .sidebar-collapse
+              %ul#side-menu.nav
+                %li.sidebar-search
+                  .input-group.custom-search-form
+                    %input.form-control{:placeholder => "Search...", :type => "text"}
+                      %span.input-group-btn
+                        %button.btn.btn-default{:type => "button"}
+                          %i.fa.fa-search
+                -#/ /input-group
+                =render partial: "home/side_menu"
+        -#/ /.sidebar-collapse
+        -#/ /.navbar-static-side
+      #page-wrapper
+        = render 'layouts/messages'
+        = yield
+        -#  / /#page-wrapper
+        -#  / /#wrapper
+        -#/ Page-Level Demo Scripts - Dashboard - Use for reference
+    -else
+      = render 'layouts/messages'
+      = yield
+

@@ -27,3 +27,5 @@ pl:
   shared:
     show: pokaż
     edit: edycja
+    add:  dodaj
+    delete: usuń

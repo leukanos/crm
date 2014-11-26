@@ -14,7 +14,9 @@ gem 'simple_form'
 gem 'select2-rails'
 gem 'haml', '~> 4.0.5'
 gem "font-awesome-rails"
-
+gem 'awesome_nested_fields'
+gem 'will_paginate_mongoid'
+gem 'will_paginate-bootstrap'
 #authentication
 gem 'devise'
 
@@ -61,4 +63,7 @@ group :development, :test do
   gem 'hirb'
   gem 'awesome_print'
   gem "spring"
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem 'faker'
 end

@@ -1,4 +1,7 @@
-body { padding-top: 60px; }
+body {
+  padding-top: 50px;
+  background-color: #f8f8f8;
+}
 
 //styling for devise login/registration page
 .devise {
@@ -45,4 +48,46 @@ body { padding-top: 60px; }
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
+}
+
+@media (min-width: 768px) {
+  /* line 10, /Users/lukasz/.rvm/gems/ruby-2.1.5@crm/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 10, /Users/lukasz/.rvm/gems/ruby-2.1.5@crm/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: auto;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 10, /Users/lukasz/.rvm/gems/ruby-2.1.5@crm/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: auto;
+  }
+}
+
+.row {
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.navbar-inverse {
+  background-color: #192124;
+  border-color: #090909;
+}
+
+.nav-view {
+  background-color: #313744;
+  color: #D5DDE0;
+  left: 0;
+  padding: 25px;
+}
+
+.flex {
+  display: flex;
+  align-items: stretch;
+  min-height: 1000px;
 }
