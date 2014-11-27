@@ -25,6 +25,7 @@ body {
   #user_remember_me {
     margin-left: 0;
     margin-right: 5px;
+    position: static;
   }
   .new_user .form-control {
     position: relative;
@@ -86,8 +87,6 @@ body {
   padding: 25px;
 }
 
-.flex {
-  display: flex;
-  align-items: stretch;
-  min-height: 1000px;
+.add-account{
+  margin-top: 20px;
 }
