@@ -1,4 +1,11 @@
 .container
+  .row
+    .col-md-8
+      %h2
+        =t('shared.account') + " (#{@accounts.total_entries})"
+    .col-md-4
+      =link_to t('shared.add'), new_account_path, class: "btn btn-success pull-right add-account"
+  %hr
   %table.table.table-striped.table-bordered
     %tr
     %th

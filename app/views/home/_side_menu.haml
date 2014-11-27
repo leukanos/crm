@@ -1,22 +1,22 @@
 %li
   %a{:href => root_path}
     %i.fa.fa-dashboard.fa-fw
-    Dashboard
-%li
-  %a{:href => "#"}
-    %i.fa.fa-bar-chart-o.fa-fw
-    Charts
-    %span.fa.arrow
-  %ul.nav.nav-second-level
-    %li
-      %a{:href => "flot.html"} Flot Charts
-    %li
-      %a{:href => "morris.html"} Morris.js Charts
+    =t('shared.dashboard')
+-#%li
+-#  %a{:href => "#"}
+-#    %i.fa.fa-bar-chart-o.fa-fw
+-#    Charts
+-#    %span.fa.arrow
+-#  %ul.nav.nav-second-level
+-#    %li
+-#      %a{:href => "flot.html"} Flot Charts
+-#    %li
+-#      %a{:href => "morris.html"} Morris.js Charts
   / /.nav-second-level
 %li
   %a{:href => accounts_path}
     %i.fa.fa-building-o.fa-fw
-    Firmy
+    =t('shared.account')
 %li
   %a{:href => "forms.html"}
     %i.fa.fa-edit.fa-fw

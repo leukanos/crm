@@ -7,6 +7,7 @@ class Account
   embeds_many :contact_attributes, as: :contactable_attribute
 
   accepts_nested_attributes_for :contact_attributes, allow_destroy: true
+  accepts_nested_attributes_for :addresses, allow_destroy: true
 
   field :name
   field :acronym
