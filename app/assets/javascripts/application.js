@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require bootstrap
 //= require select2
-//= require jquery.nested-fields
 //= require sb-admin/jquery.metisMenu
 //= require sb-admin/jquery.dataTables
 //= require sb-admin/dataTables.bootstrap
@@ -26,10 +25,10 @@
 //= require sb-admin/raphael-2.1.0.min
 //= require sb-admin/morris
 //= require sb-admin/sb-admin
+//= require cocoon
 //= require_tree .
 
 $(document).on('ready page:load', function () {
-    $('FORM').nestedFields();
     $('.select2').select2();
     $('#side-menu').metisMenu();
 });

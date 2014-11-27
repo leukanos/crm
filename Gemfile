@@ -11,10 +11,11 @@ gem 'figaro'
 gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'country_select'
 gem 'select2-rails'
 gem 'haml', '~> 4.0.5'
 gem "font-awesome-rails"
-gem 'awesome_nested_fields'
+gem "cocoon"
 gem 'will_paginate_mongoid'
 gem 'will_paginate-bootstrap'
 #authentication

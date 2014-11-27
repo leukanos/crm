@@ -3,7 +3,7 @@ namespace :db do
   task :populate => :environment do
     require 'faker'
 
-
+    [Account].each(&:delete_all)
     (1..1000).each do
       a = Account.new
       a.save
