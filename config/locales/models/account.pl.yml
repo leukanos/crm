@@ -6,3 +6,9 @@ pl:
         acronym: akronim
         description: opis
         contact_attributes: kontakt
+    models:
+      points_flow:
+        one: firma
+        few: firmy
+        many: firmy
+        other: firma

@@ -1,0 +1,18 @@
+pl:
+  accounts:
+    index:
+      header: firmy
+    edit:
+      header: edytuj firmę
+    show:
+      header: firma
+    new:
+      header: dodaj firmę
+  flash:
+    points_flows:
+      create:
+        notice: "dodano firmę"
+      update:
+        notice: "zaktualizowano firmę"
+      destroy:
+        notice: "firma usunięta"
