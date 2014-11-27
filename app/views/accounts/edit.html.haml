@@ -1,2 +1,9 @@
 .container
-  = render 'form'
+  .row
+    .col-md-8
+      %h2
+        =t('.header') + ": #{@account.name}"
+  %hr
+  .row
+    .col-md-12
+      = render 'form'
