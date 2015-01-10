@@ -4,6 +4,8 @@
     %dd= @account.name
     %dt= Account.human_attribute_name(:acronym)
     %dd= @account.acronym
+    %dt= Account.human_attribute_name(:assignee)
+    %dd= @account.assigned_user_name
     %dt= Account.human_attribute_name(:description)
     %dd= @account.description
     %dt= Account.human_attribute_name(:contact_attributes)

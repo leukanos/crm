@@ -2,6 +2,7 @@ class AccountsController < ApplicationController
 
   def index
     @accounts = Account.full_text_search(params[:search], allow_empty_search: true).paginate(:page => params[:page])
+
   end
 
   def show
@@ -38,7 +39,7 @@ class AccountsController < ApplicationController
   private
 
   def account_params
-    params.require(:account).permit(:name, :acronym, :description,
+    params.require(:account).permit(:name, :acronym, :description,:assigned_to,
                                     contact_attributes_attributes: [:attribute_type, :value, :id, :_destroy, :_id],
                                     addresses_attributes: [:address_type, :street, :zipcode, :city, :country, :_destroy])
   end
