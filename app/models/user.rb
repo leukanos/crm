@@ -5,6 +5,7 @@ class User
   has_many :addresses, as: :addressable
 
   has_many :accounts
+  has_many :assigned_accounts, :class_name => 'Account', :foreign_key => 'assigned_to'
 
   # Include default devise modules. Others available are:
   #  :lockable, :timeoutable and :omniauthable

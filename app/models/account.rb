@@ -4,6 +4,7 @@ class Account
 
 
   belongs_to :user
+  belongs_to :assignee, :class_name => "User", :foreign_key => :assigned_to
   has_many :addresses, as: :addressable
   embeds_many :contact_attributes, as: :contactable_attribute
 
@@ -17,4 +18,7 @@ class Account
   validates :name, uniqueness: true, presence: true
 
   search_in :name, :acronym
+
+  scope :created_by, ->(user) {where user: user}
+  scope :assigned_to, ->(user) {where assignee: user}
 end
