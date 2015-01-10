@@ -28,6 +28,8 @@
     %th
       =t('enumerize.contact_attribute.attribute_type.phone')
     %th
+      =Account.human_attribute_name(:assignee)
+    %th
       =t('enumerize.contact_attribute.attribute_type.other')
     -i = 0
     -@accounts.each do |account|
@@ -46,6 +48,8 @@
         %td
           -account.contact_attributes.phone.each do |phone|
             ="#{phone.attribute_type.text}: #{phone.value}"
+        %td
+          =account.assigned_user_name
         %td
           -account.contact_attributes.other.each do |other|
             ="#{other.value}"

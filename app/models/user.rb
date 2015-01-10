@@ -4,8 +4,8 @@ class User
 
   has_many :addresses, as: :addressable
 
-  has_many :accounts
-  has_many :assigned_accounts, :class_name => 'Account', :foreign_key => 'assigned_to'
+  has_many :accounts, inverse_of: :user
+  has_many :assigned_accounts, :class_name => 'Account', :foreign_key => 'assigned_to', inverse_of: :assignee
 
   # Include default devise modules. Others available are:
   #  :lockable, :timeoutable and :omniauthable
