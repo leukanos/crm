@@ -43,6 +43,8 @@ gem 'rails_admin'
 
 gem 'enumerize'
 
+gem 'mongoid_search'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

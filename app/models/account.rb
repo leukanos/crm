@@ -1,5 +1,6 @@
 class Account
   include Mongoid::Document
+  include Mongoid::Search
 
 
   belongs_to :user
@@ -14,4 +15,6 @@ class Account
   field :description
 
   validates :name, uniqueness: true, presence: true
+
+  search_in :name, :acronym
 end

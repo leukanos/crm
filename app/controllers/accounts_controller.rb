@@ -1,7 +1,7 @@
 class AccountsController < ApplicationController
 
   def index
-    @accounts = Account.paginate(:page => params[:page])
+    @accounts = Account.full_text_search(params[:search], allow_empty_search: true).paginate(:page => params[:page])
   end
 
   def show

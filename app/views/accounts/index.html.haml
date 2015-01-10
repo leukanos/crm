@@ -5,6 +5,16 @@
         =t('shared.account') + " (#{@accounts.total_entries})"
     .col-md-4
       =link_to t('shared.add'), new_account_path, class: "btn btn-success pull-right add-account"
+
+  .row
+    .col-md-offset-8.col-md-4
+      = simple_form_for(:search, :method => 'get', html: {class: 'form-inline pull-right'}) do |f|
+        .form-group
+          .input-group
+            =f.input_field :q, html: {class: 'form-control'}, required: false
+            .input-group-btn
+              =button_tag(type: 'submit', class: "btn btn-primary") do
+                %i.fa.fa-search
   %hr
   %table.table.table-striped.table-bordered
     %tr
