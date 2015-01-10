@@ -12,4 +12,5 @@ class ContactAttribute
 
   field :attribute_type
   field :value
+  validates_presence_of :attribute_type
 end
