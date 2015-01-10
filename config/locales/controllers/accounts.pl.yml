@@ -8,6 +8,9 @@ pl:
       header: firma
     new:
       header: dodaj firmę
+    form:
+      addresses: adresy
+      contact_attributes: formy kontaktu
   flash:
     points_flows:
       create:
