@@ -2,8 +2,8 @@
   .row
     .col-md-8
       %h2
-        =t('.header') + ": #{@account.name}"
+        =t('.header')
+        %span.small
+          ="#{@account.name}"
   %hr
-  .row
-    .col-md-12
-      = render 'form'
+  = render 'form'
