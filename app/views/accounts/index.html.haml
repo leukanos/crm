@@ -11,7 +11,7 @@
       = simple_form_for(:search, :method => 'get', html: {class: 'form-inline pull-right'}) do |f|
         .form-group
           .input-group
-            =f.input_field :q, html: {class: 'form-control'}, required: false
+            =f.input_field :q, as: :search, html: {class: 'form-control'}, required: false, value: search_value
             .input-group-btn
               =button_tag(type: 'submit', class: "btn btn-primary") do
                 %i.fa.fa-search
