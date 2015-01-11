@@ -5,6 +5,9 @@
         =t('.header')
         %span.small
           ="#{@account.name}"
+    .col-md-4
+      .span.pull-right.delete
+        =link_to t('shared.delete'), @account, method: :delete, data: { confirm: t('shared.shure') }
   .row
     .col-md-12
       %dl

@@ -1,6 +1,8 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: [:show, :edit, :update, :destroy]
 
+  respond_to :html
+
   def index
     @accounts = Account.full_text_search(params[:search], allow_empty_search: true).paginate(:page => params[:page])
   end
@@ -15,6 +17,7 @@ class AccountsController < ApplicationController
 
   def create
     @account = Account.new(account_params)
+    @account.user = current_user
 
     if @account.save
       redirect_to @account
@@ -28,6 +31,7 @@ class AccountsController < ApplicationController
   end
 
   def update
+    @account = Account.find(params[:id])
     if @account.update_attributes(account_params)
       redirect_to @account
     else
@@ -37,6 +41,7 @@ class AccountsController < ApplicationController
 
   def destroy
     @account.destroy
+    respond_with(@account)
   end
 
   private

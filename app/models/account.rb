@@ -25,4 +25,5 @@ class Account
   def assigned_user_name
     assignee.username if assignee
   end
+
 end
