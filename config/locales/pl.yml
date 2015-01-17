@@ -30,7 +30,8 @@ pl:
     add:  dodaj
     delete: usuń
     back: cofnij
-    account: firmy
+    accounts: firmy
+    people: osoby
     dashboard: panel
     shure: Jesteś pewien?
 

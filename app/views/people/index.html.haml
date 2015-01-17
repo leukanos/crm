@@ -1,17 +1,49 @@
-%h1 Listing people
-%table
-  %thead
+.container
+  .row
+    .col-md-8
+      %h2
+        =t('shared.people') + " (#{@people.total_entries})"
+    .col-md-4
+      =link_to t('shared.add'), new_person_path, class: "btn btn-success pull-right add-account"
+
+  .row
+    .col-md-offset-8.col-md-4
+      = simple_form_for(:search, :method => 'get', html: {class: 'form-inline pull-right'}) do |f|
+        .form-group
+          .input-group
+            =f.input_field :q, as: :search, html: {class: 'form-control'}, required: false, value: search_value
+            .input-group-btn
+              =button_tag(type: 'submit', class: "btn btn-primary") do
+                %i.fa.fa-search
+
+  %hr
+  %table.table.table-striped.table-bordered
     %tr
-      %th Firstname
-      %th Lastname
-      %th{:colspan => "3"}
-  %tbody
-    - @people.each do |person|
+    %th
+      ='#'
+    %th
+    %th
+      =Person.human_attribute_name(:full_name)
+    %th
+      =t('enumerize.contact_attribute.attribute_type.email')
+    %th
+      =t('enumerize.contact_attribute.attribute_type.phone')
+    %th
+      =t('enumerize.contact_attribute.attribute_type.other')
+    -i = 0
+    -@people.each do |person|
+      -i+=1
       %tr
-        %td= person.firstname
-        %td= person.lastname
-        %td= link_to 'Show', person
-        %td= link_to 'Edit', edit_person_path(person)
-        %td= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'New Person', new_person_path
+        %td
+          =i
+        %td
+          = link_to_with_icon('', 'fa fa-list-alt icon-white', person_path(person),
+           {:class => "btn btn-primary btn-small btn-pad", :"data-toggle" => "tooltip", :title => t(:'shared.show')})
+          = link_to_with_icon('', 'fa fa-edit icon-white', edit_person_path(person),
+           {:class => "btn btn-primary btn-small btn-pad", :"data-toggle" => "tooltip", :title => t(:'shared.edit')})
+        %td
+          = person.full_name
+        %td
+        %td
+        %td
+  =will_paginate @people, renderer: BootstrapPagination::Rails

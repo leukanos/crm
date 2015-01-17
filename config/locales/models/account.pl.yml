@@ -7,3 +7,7 @@ pl:
         description: opis
         contact_attributes: kontakt
         assignee: przypisany_do
+      person:
+        firstname: imie
+        lastname: nazwisko
+        full_name: imie i nazwisko
