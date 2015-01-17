@@ -4,7 +4,7 @@ class PeopleController < ApplicationController
   respond_to :html
 
   def index
-    @people = Person.all
+    @people = Person.full_text_search(params[:search], allow_empty_search: true).paginate(page: params[:page])
     respond_with(@people)
   end
 
