@@ -69,6 +69,7 @@ group :development, :test do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'faker'
+  gem 'rubocop', require: false
   # gem 'pry'
   # gem 'pry-remote'
   # gem 'pry-stack_explorer'
