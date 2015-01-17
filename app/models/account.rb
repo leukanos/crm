@@ -2,18 +2,19 @@ class Account
   include Mongoid::Document
   include Mongoid::Search
 
+  field :name
+  field :acronym
+  field :description
 
-  belongs_to :user, inverse_of: :accounts
-  belongs_to :assignee, :class_name => "User", :foreign_key => :assigned_to, inverse_of: :assigned_accounts
-  has_many :addresses, as: :addressable
+  belongs_to              :user, inverse_of: :accounts
+  belongs_to              :assignee, :class_name => "User", :foreign_key => :assigned_to, inverse_of: :assigned_accounts
+  has_many                :addresses, as: :addressable
+  has_and_belongs_to_many :persons
+
   embeds_many :contact_attributes, as: :contactable_attribute
 
   accepts_nested_attributes_for :contact_attributes, allow_destroy: true
   accepts_nested_attributes_for :addresses, allow_destroy: true
-
-  field :name
-  field :acronym
-  field :description
 
   validates :name, uniqueness: true, presence: true
 
